@@ -1,104 +1,131 @@
-<!-- Header -->
-<header class="header">
-  <nav class="nav">
-    <div class="nav-brand">
-      <span class="logo">Progress</span>
-    </div>
-    <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#demo">Demo</a>
-      <a href="#testimonials">Testimonials</a>
-      <button class="btn-primary">Get Started</button>
-    </div>
-  </nav>
-</header>
+<!-- Header with Kendo AppBar -->
+<kendo-appbar [themeColor]="'primary'">
+  <kendo-appbar-section>
+    <h3>Progress Showcase</h3>
+  </kendo-appbar-section>
+  <kendo-appbar-spacer></kendo-appbar-spacer>
+  <kendo-appbar-section>
+    <button kendoButton [fillMode]="'flat'" [themeColor]="'primary'">Features</button>
+    <button kendoButton [fillMode]="'flat'" [themeColor]="'primary'">Demo</button>
+    <button kendoButton [fillMode]="'flat'" [themeColor]="'primary'">Testimonials</button>
+    <button kendoButton [themeColor]="'secondary'">Get Started</button>
+  </kendo-appbar-section>
+</kendo-appbar>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Progress Agentic UI Generator</h1>
-    <p>Transform natural language into professional Angular components with AI-powered development</p>
-    <div class="hero-actions">
-      <button class="btn-primary">Start Building</button>
-      <button class="btn-secondary">Watch Demo</button>
+<!-- Hero Section with Kendo Card -->
+<div class="hero-section">
+  <div class="k-card hero-card">
+    <div class="k-card-body">
+      <h1 class="k-card-title">Progress Agentic UI Generator</h1>
+      <p class="k-card-subtitle">Transform natural language into professional Angular components with AI-powered development</p>
+      <div class="hero-actions">
+        <button kendoButton [themeColor]="'primary'" [size]="'large'">Start Building</button>
+        <button kendoButton [fillMode]="'outline'" [size]="'large'">Watch Demo</button>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- Features Grid -->
-<section id="features" class="features">
-  <div class="container">
-    <h2>Key Capabilities</h2>
-    <div class="features-grid">
-      @for (feature of features; track feature.id) {
-        <div class="feature-card">
+<!-- Features Grid with Kendo TileLayout -->
+<div class="features-section">
+  <h2 class="section-title">Key Capabilities</h2>
+  <kendo-tilelayout [columns]="3" [rowHeight]="200" [gap]="{ rows: 16, columns: 16 }">
+    <kendo-tilelayout-item *ngFor="let feature of features" [col]="1" [row]="1">
+      <div class="k-card feature-card">
+        <div class="k-card-header">
           <div class="feature-icon">{{ feature.icon }}</div>
-          <h3>{{ feature.title }}</h3>
-          <p>{{ feature.description }}</p>
         </div>
-      }
+        <div class="k-card-body">
+          <h4 class="k-card-title">{{ feature.title }}</h4>
+          <p class="k-card-subtitle">{{ feature.description }}</p>
+        </div>
+      </div>
+    </kendo-tilelayout-item>
+  </kendo-tilelayout>
+</div>
+
+<!-- Demo Section with Kendo Splitter -->
+<div class="demo-section">
+  <h2 class="section-title">Live Component Generation</h2>
+  <kendo-splitter [orientation]="'horizontal'">
+    <kendo-splitter-pane [size]="'50%'">
+      <div class="k-card demo-input-card">
+        <div class="k-card-header">
+          <h4 class="k-card-title">Input</h4>
+        </div>
+        <div class="k-card-body">
+          <kendo-textarea 
+            placeholder="Describe your component..."
+            value="Create a modern pricing table with three tiers"
+            [rows]="6">
+          </kendo-textarea>
+          <button kendoButton [themeColor]="'primary'" class="generate-btn">Generate</button>
+        </div>
+      </div>
+    </kendo-splitter-pane>
+    <kendo-splitter-pane [size]="'50%'">
+      <div class="k-card demo-output-card">
+        <div class="k-card-header">
+          <h4 class="k-card-title">Generated Component</h4>
+        </div>
+        <div class="k-card-body">
+          <kendo-textarea 
+            [readonly]="true"
+            value="<kendo-grid [data]='data'>...</kendo-grid>"
+            [rows]="6">
+          </kendo-textarea>
+        </div>
+      </div>
+    </kendo-splitter-pane>
+  </kendo-splitter>
+</div>
+
+<!-- Testimonials with Kendo Cards -->
+<div class="testimonials-section">
+  <h2 class="section-title">What Developers Say</h2>
+  <div class="testimonials-list">
+    <div *ngFor="let testimonial of testimonials" class="k-card testimonial-card">
+      <div class="k-card-body">
+        <blockquote class="testimonial-quote">"{{ testimonial.quote }}"</blockquote>
+        <div class="testimonial-author">
+          <strong>{{ testimonial.author }}</strong>
+          <span>{{ testimonial.role }}</span>
+        </div>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- Demo Section -->
-<section id="demo" class="demo">
-  <div class="container">
-    <h2>Live Component Generation</h2>
-    <div class="demo-content">
-      <div class="demo-input">
-        <textarea placeholder="Describe your component...">Create a modern pricing table with three tiers</textarea>
-        <button class="btn-primary">Generate</button>
-      </div>
-      <div class="demo-output">
-        <div class="code-preview">Generated component preview...</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials -->
-<section id="testimonials" class="testimonials">
-  <div class="container">
-    <h2>What Developers Say</h2>
-    <div class="testimonials-carousel">
-      @for (testimonial of testimonials; track testimonial.id) {
-        <div class="testimonial-card">
-          <p>"{{ testimonial.quote }}"</p>
-          <div class="testimonial-author">
-            <strong>{{ testimonial.author }}</strong>
-            <span>{{ testimonial.role }}</span>
+<!-- Footer with Kendo Card -->
+<div class="footer-section">
+  <div class="k-card footer-card">
+    <div class="k-card-body">
+      <kendo-tilelayout [columns]="3" [rowHeight]="150" [gap]="{ rows: 16, columns: 16 }">
+        <kendo-tilelayout-item [col]="1" [row]="1">
+          <div class="footer-brand">
+            <h4>Progress</h4>
+            <p>AI-powered development tools</p>
           </div>
-        </div>
-      }
+        </kendo-tilelayout-item>
+        <kendo-tilelayout-item [col]="1" [row]="1">
+          <div class="footer-section">
+            <h5>Product</h5>
+            <button kendoButton [fillMode]="'flat'" [size]="'small'">Features</button>
+            <button kendoButton [fillMode]="'flat'" [size]="'small'">Pricing</button>
+            <button kendoButton [fillMode]="'flat'" [size]="'small'">Documentation</button>
+          </div>
+        </kendo-tilelayout-item>
+        <kendo-tilelayout-item [col]="1" [row]="1">
+          <div class="footer-section">
+            <h5>Company</h5>
+            <button kendoButton [fillMode]="'flat'" [size]="'small'">About</button>
+            <button kendoButton [fillMode]="'flat'" [size]="'small'">Contact</button>
+            <button kendoButton [fillMode]="'flat'" [size]="'small'">Support</button>
+          </div>
+        </kendo-tilelayout-item>
+      </kendo-tilelayout>
     </div>
   </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <span class="logo">Progress</span>
-        <p>AI-powered development tools</p>
-      </div>
-      <div class="footer-links">
-        <div class="footer-section">
-          <h4>Product</h4>
-          <a href="#">Features</a>
-          <a href="#">Pricing</a>
-          <a href="#">Documentation</a>
-        </div>
-        <div class="footer-section">
-          <h4>Company</h4>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-          <a href="#">Support</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+</div>
 
 <router-outlet />

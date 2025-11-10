@@ -1,4 +1,4 @@
-/* Progress Design System Variables */
+/* Progress Design System with Kendo Styling */
 :host {
   --progress-primary: #E21C2A;
   --progress-secondary: #0066CC;
@@ -6,244 +6,153 @@
   --progress-light: #F8F9FA;
   --progress-gray: #6C757D;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: block;
 }
 
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Global Kendo Card Styling */
+.k-card {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Header */
-.header {
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--progress-primary);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--progress-dark);
-  font-weight: 500;
-}
-
-/* Buttons */
-.btn-primary, .btn-secondary {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background: var(--progress-primary);
-  color: white;
-}
-
-.btn-primary:hover {
-  background: #c41e3a;
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--progress-primary);
-  border: 2px solid var(--progress-primary);
-}
-
-.btn-secondary:hover {
-  background: var(--progress-primary);
-  color: white;
+.k-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 /* Hero Section */
-.hero {
+.hero-section {
+  padding: 4rem 2rem;
   background: linear-gradient(135deg, var(--progress-light) 0%, #e3f2fd 100%);
-  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-card {
+  max-width: 800px;
   text-align: center;
+  background: white;
 }
 
-.hero-content h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
+.hero-card .k-card-title {
+  font-size: 3rem;
   color: var(--progress-dark);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
-.hero-content p {
+.hero-card .k-card-subtitle {
   font-size: 1.25rem;
   color: var(--progress-gray);
   margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.6;
 }
 
 .hero-actions {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* Features Section */
-.features {
-  padding: 6rem 2rem;
-  background: white;
-}
-
-.features h2 {
+/* Section Titles */
+.section-title {
   text-align: center;
   font-size: 2.5rem;
   color: var(--progress-dark);
   margin-bottom: 3rem;
+  font-weight: 600;
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+/* Features Section */
+.features-section {
+  padding: 4rem 2rem;
+  background: white;
 }
 
 .feature-card {
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  height: 100%;
   text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
 }
 
 .feature-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  display: block;
 }
 
-.feature-card h3 {
+.feature-card .k-card-title {
   font-size: 1.25rem;
   color: var(--progress-dark);
   margin-bottom: 1rem;
 }
 
-.feature-card p {
+.feature-card .k-card-subtitle {
   color: var(--progress-gray);
   line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 /* Demo Section */
-.demo {
-  padding: 6rem 2rem;
+.demo-section {
+  padding: 4rem 2rem;
   background: var(--progress-light);
 }
 
-.demo h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  color: var(--progress-dark);
-  margin-bottom: 3rem;
+.demo-input-card,
+.demo-output-card {
+  height: 100%;
+  margin: 1rem;
 }
 
-.demo-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-.demo-input textarea {
-  width: 100%;
+.demo-input-card .k-card-body,
+.demo-output-card .k-card-body {
+  display: flex;
+  flex-direction: column;
   height: 200px;
-  padding: 1rem;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-family: inherit;
-  resize: vertical;
+}
+
+.demo-input-card kendo-textarea,
+.demo-output-card kendo-textarea {
+  flex: 1;
   margin-bottom: 1rem;
 }
 
-.demo-output {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-.code-preview {
-  background: #f8f9fa;
-  padding: 1rem;
-  border-radius: 4px;
-  font-family: 'Courier New', monospace;
-  color: var(--progress-gray);
+.generate-btn {
+  align-self: flex-start;
 }
 
 /* Testimonials Section */
-.testimonials {
-  padding: 6rem 2rem;
+.testimonials-section {
+  padding: 4rem 2rem;
   background: white;
 }
 
-.testimonials h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  color: var(--progress-dark);
-  margin-bottom: 3rem;
-}
-
-.testimonials-carousel {
+.testimonials-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
 .testimonial-card {
-  padding: 2rem;
-  background: var(--progress-light);
-  border-radius: 12px;
   text-align: center;
+  background: var(--progress-light);
 }
 
-.testimonial-card p {
+.testimonial-quote {
   font-size: 1.1rem;
   font-style: italic;
   color: var(--progress-dark);
-  margin-bottom: 1.5rem;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
 }
 
 .testimonial-author strong {
   display: block;
   color: var(--progress-dark);
   margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
 .testimonial-author span {
@@ -251,56 +160,61 @@
   font-size: 0.9rem;
 }
 
-/* Footer */
-.footer {
+/* Footer Section */
+.footer-section {
+  padding: 3rem 2rem;
   background: var(--progress-dark);
-  color: white;
-  padding: 3rem 2rem 2rem;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
+.footer-card {
+  background: var(--progress-dark);
+  border: none;
+  box-shadow: none;
 }
 
-.footer-brand .logo {
+.footer-brand h4 {
   color: white;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
-  display: block;
 }
 
 .footer-brand p {
   color: #ccc;
+  margin: 0;
 }
 
-.footer-links {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 2rem;
-}
-
-.footer-section h4 {
+.footer-section h5 {
   color: white;
   margin-bottom: 1rem;
+  font-size: 1.1rem;
 }
 
-.footer-section a {
+.footer-section button {
   display: block;
-  color: #ccc;
-  text-decoration: none;
   margin-bottom: 0.5rem;
-  transition: color 0.3s ease;
+  text-align: left;
+  color: #ccc !important;
 }
 
-.footer-section a:hover {
-  color: var(--progress-primary);
+.footer-section button:hover {
+  color: var(--progress-primary) !important;
+}
+
+/* Kendo AppBar Customization */
+kendo-appbar {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+kendo-appbar h3 {
+  color: white;
+  margin: 0;
+  font-weight: 600;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
+  .hero-card .k-card-title {
+    font-size: 2rem;
   }
   
   .hero-actions {
@@ -308,15 +222,30 @@
     align-items: center;
   }
   
-  .demo-content {
-    grid-template-columns: 1fr;
+  .section-title {
+    font-size: 2rem;
   }
   
-  .nav-links {
-    display: none;
+  kendo-tilelayout {
+    --kendo-tilelayout-columns: 1 !important;
   }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-  }
+}
+
+/* Kendo Component Overrides */
+.k-tilelayout {
+  padding: 0;
+}
+
+.k-tilelayout-item {
+  padding: 0.5rem;
+}
+
+.k-splitter {
+  border: none;
+  min-height: 400px;
+}
+
+.k-carousel {
+  border-radius: 8px;
+  overflow: hidden;
 }

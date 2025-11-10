@@ -43,4 +43,6 @@ __screenshots__/
 Thumbs.db
 
 #License-key
-kendo-license.txt
+telerik-license.txt
+
+.env

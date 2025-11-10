@@ -1,9 +1,23 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { LayoutModule } from '@progress/kendo-angular-layout';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+import { NavigationModule } from '@progress/kendo-angular-navigation';
+import { ListViewModule } from '@progress/kendo-angular-listview';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    ButtonsModule,
+    LayoutModule,
+    InputsModule,
+    NavigationModule,
+    ListViewModule
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -24,4 +38,6 @@ export class App {
     { id: 2, quote: 'The generated components are production-ready and follow best practices.', author: 'Mike Rodriguez', role: 'Tech Lead' },
     { id: 3, quote: 'Perfect integration with our existing Angular workflow.', author: 'Emma Thompson', role: 'Frontend Architect' }
   ];
+  
+
 }
