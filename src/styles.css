@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@progress/kendo-theme-default/dist/all.css';
+
+/* Global Progress Design System Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Progress Color Palette */
+:root {
+  --progress-primary: #E21C2A;
+  --progress-secondary: #0066CC;
+  --progress-success: #28a745;
+  --progress-warning: #ffc107;
+  --progress-danger: #dc3545;
+  --progress-dark: #1A1A1A;
+  --progress-light: #F8F9FA;
+  --progress-gray-100: #f8f9fa;
+  --progress-gray-200: #e9ecef;
+  --progress-gray-300: #dee2e6;
+  --progress-gray-400: #ced4da;
+  --progress-gray-500: #adb5bd;
+  --progress-gray-600: #6c757d;
+  --progress-gray-700: #495057;
+  --progress-gray-800: #343a40;
+  --progress-gray-900: #212529;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default margins and paddings */
+* {
+  box-sizing: border-box;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--progress-dark);
+}
+
+p {
+  line-height: 1.6;
+  color: var(--progress-gray-600);
+}
+
+/* Links */
+a {
+  color: var(--progress-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #c41e3a;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 3rem; }
