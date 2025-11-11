@@ -50,6 +50,33 @@ export class App {
     { id: 3, quote: 'Perfect integration with our existing Angular workflow.', author: 'Emma Thompson', role: 'Frontend Architect' }
   ];
   
+  faqs = [
+    {
+      question: 'What is Progress Agentic UI Generator?',
+      answer: 'Progress Agentic UI Generator is an AI-powered tool that transforms natural language descriptions into professional Angular components using Kendo UI, following Progress Design System guidelines.'
+    },
+    {
+      question: 'How does the AI component generation work?',
+      answer: 'Simply describe what you want in plain English, and our AI will generate the corresponding Angular component code with proper Kendo UI integration, styling, and best practices.'
+    },
+    {
+      question: 'What Kendo UI components are supported?',
+      answer: 'We support all major Kendo UI for Angular components including Grid, Charts, Forms, Navigation, Layout components, and more. The AI automatically selects the most appropriate components for your needs.'
+    },
+    {
+      question: 'Is the generated code production-ready?',
+      answer: 'Yes! All generated code follows Angular and Kendo UI best practices, includes proper TypeScript typing, accessibility features, and is optimized for performance in production environments.'
+    },
+    {
+      question: 'Can I customize the generated components?',
+      answer: 'Absolutely! The generated code is fully customizable. You can modify styling, add business logic, integrate with your existing services, and extend functionality as needed.'
+    },
+    {
+      question: 'What support is available?',
+      answer: 'We offer comprehensive support including documentation, video tutorials, community forums, and dedicated technical support for Professional and Enterprise plans.'
+    }
+  ];
+  
   pricingPlans = [
     {
       name: 'Starter',

@@ -95,6 +95,20 @@
     </div>
   </div>
 
+  <!-- FAQ Section with Kendo PanelBar -->
+  <div class="faq-section">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <kendo-panelbar>
+        <kendo-panelbar-item *ngFor="let faq of faqs" [title]="faq.question">
+          <ng-template kendoPanelBarContent>
+            <p>{{ faq.answer }}</p>
+          </ng-template>
+        </kendo-panelbar-item>
+      </kendo-panelbar>
+    </div>
+  </div>
+
   <!-- Footer with Kendo Card -->
   <div class="footer-section">
     <div class="k-card footer-card">

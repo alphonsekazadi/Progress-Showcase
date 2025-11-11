@@ -217,6 +217,55 @@
   background: white;
 }
 
+/* FAQ Section */
+.faq-section {
+  padding: 4rem 2rem;
+  background: var(--progress-light);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-container .k-panelbar {
+  border: none;
+  background: transparent;
+}
+
+.faq-container .k-panelbar-item {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: white;
+}
+
+.faq-container .k-panelbar-header {
+  background: white;
+  border: none;
+  padding: 1.5rem;
+  font-weight: 600;
+  color: var(--progress-dark);
+  font-size: 1.1rem;
+}
+
+.faq-container .k-panelbar-header:hover {
+  background: #f8f9fa;
+}
+
+.faq-container .k-panelbar-content {
+  background: white;
+  border: none;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.faq-container .k-panelbar-content p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--progress-gray);
+}
+
 .testimonials-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
