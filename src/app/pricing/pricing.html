@@ -1,0 +1,34 @@
+<!-- Pricing Page with Kendo Cards -->
+<div class="pricing-page">
+  <div class="pricing-hero">
+    <div class="k-card hero-card">
+      <div class="k-card-body">
+        <h1 class="k-card-title">Choose Your Plan</h1>
+        <p class="k-card-subtitle">Select the perfect plan for your development needs</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing-content">
+    <div class="pricing-grid">
+      <div *ngFor="let plan of pricingPlans" class="k-card pricing-card" [class.featured]="plan.featured">
+        <div class="k-card-header">
+          <h3 class="k-card-title">{{ plan.name }}</h3>
+          <div class="price">
+            <span class="currency">$</span>
+            <span class="amount">{{ plan.price }}</span>
+            <span class="period">/month</span>
+          </div>
+        </div>
+        <div class="k-card-body">
+          <ul class="features-list">
+            <li *ngFor="let feature of plan.features">{{ feature }}</li>
+          </ul>
+          <button kendoButton [themeColor]="plan.featured ? 'primary' : 'secondary'" [size]="'large'" class="pricing-btn">
+            {{ plan.buttonText }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

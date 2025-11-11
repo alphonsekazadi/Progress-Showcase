@@ -71,8 +71,17 @@
   background: white;
 }
 
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .feature-card {
-  height: 100%;
+  height: auto;
+  min-height: 250px;
   text-align: center;
 }
 
@@ -121,6 +130,85 @@
 
 .generate-btn {
   align-self: flex-start;
+}
+
+/* Pricing Section */
+.pricing-section {
+  padding: 4rem 2rem;
+  background: var(--progress-light);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.pricing-card.featured {
+  transform: scale(1.05);
+  border: 2px solid var(--progress-primary);
+}
+
+.pricing-card.featured::before {
+  content: 'Most Popular';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--progress-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.price {
+  margin: 1rem 0;
+}
+
+.currency {
+  font-size: 1.2rem;
+  vertical-align: top;
+}
+
+.amount {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--progress-primary);
+}
+
+.period {
+  font-size: 1rem;
+  color: var(--progress-gray);
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.features-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.features-list li:last-child {
+  border-bottom: none;
+}
+
+.pricing-btn {
+  width: 100%;
+  margin-top: 1rem;
 }
 
 /* Testimonials Section */
@@ -183,20 +271,30 @@
   margin: 0;
 }
 
-.footer-section h5 {
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links-section h5 {
   color: white;
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
 
-.footer-section button {
+.footer-links-section button {
   display: block;
   margin-bottom: 0.5rem;
   text-align: left;
   color: #ccc !important;
+  width: 100%;
+  justify-content: flex-start;
 }
 
-.footer-section button:hover {
+.footer-links-section button:hover {
   color: var(--progress-primary) !important;
 }
 
@@ -209,6 +307,31 @@ kendo-appbar h3 {
   color: white;
   margin: 0;
   font-weight: 600;
+}
+
+.logo-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
+.nav-btn {
+  color: white !important;
+  border: none !important;
+  background: transparent !important;
+  margin-right: 1rem;
+}
+
+.nav-btn:hover {
+  background: rgba(255,255,255,0.1) !important;
+  color: white !important;
+}
+
+.cta-btn {
+  margin-left: 1rem;
 }
 
 /* Responsive Design */
@@ -226,8 +349,17 @@ kendo-appbar h3 {
     font-size: 2rem;
   }
   
-  kendo-tilelayout {
-    --kendo-tilelayout-columns: 1 !important;
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .demo-content {
+    grid-template-columns: 1fr;
   }
 }
 
