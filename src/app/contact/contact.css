@@ -1,0 +1,123 @@
+/* Contact Page Styles */
+.contact-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #F8F9FA 0%, #e3f2fd 100%);
+}
+
+.contact-hero {
+  padding: 4rem 2rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-card {
+  max-width: 600px;
+  text-align: center;
+  background: white;
+}
+
+.hero-card .k-card-title {
+  font-size: 3rem;
+  color: #1A1A1A;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-card .k-card-subtitle {
+  font-size: 1.25rem;
+  color: #6C757D;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.contact-content {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form-card {
+  max-width: 600px;
+  width: 100%;
+  background: white;
+}
+
+.contact-form-card .k-card-title {
+  font-size: 1.5rem;
+  color: #1A1A1A;
+  margin: 0;
+  font-weight: 600;
+}
+
+.form-field {
+  margin-bottom: 1.5rem;
+}
+
+.k-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #1A1A1A;
+}
+
+.form-field kendo-textbox,
+.form-field kendo-textarea,
+.form-field kendo-dropdownlist {
+  width: 100%;
+}
+
+.k-form-error {
+  color: #E21C2A;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  margin-top: 2rem;
+}
+
+.form-actions button {
+  min-width: 120px;
+}
+
+/* Kendo Component Overrides */
+.k-textbox,
+.k-textarea,
+.k-dropdown {
+  border-radius: 4px;
+}
+
+.k-textbox:focus,
+.k-textarea:focus,
+.k-dropdown:focus {
+  border-color: #E21C2A;
+  box-shadow: 0 0 0 2px rgba(226, 28, 42, 0.1);
+}
+
+.k-invalid .k-textbox,
+.k-invalid .k-textarea,
+.k-invalid .k-dropdown {
+  border-color: #E21C2A;
+}
+
+@media (max-width: 768px) {
+  .hero-card .k-card-title {
+    font-size: 2rem;
+  }
+  
+  .contact-content {
+    padding: 1rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions button {
+    width: 100%;
+  }
+}

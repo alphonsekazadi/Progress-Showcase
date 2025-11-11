@@ -1,0 +1,98 @@
+<!-- Contact Form Page -->
+<div class="contact-page">
+  <div class="contact-hero">
+    <div class="k-card hero-card">
+      <div class="k-card-body">
+        <h1 class="k-card-title">Contact Us</h1>
+        <p class="k-card-subtitle">Get in touch with our team for support, questions, or partnership opportunities</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-content">
+    <div class="k-card contact-form-card">
+      <div class="k-card-header">
+        <h3 class="k-card-title">Send us a message</h3>
+      </div>
+      <div class="k-card-body">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+          
+          <div class="form-field">
+            <label class="k-label">Full Name *</label>
+            <kendo-textbox 
+              formControlName="fullName"
+              placeholder="Enter your full name">
+            </kendo-textbox>
+            <div *ngIf="contactForm.get('fullName')?.invalid && contactForm.get('fullName')?.touched" class="k-form-error">
+              Full name is required
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="k-label">Email Address *</label>
+            <kendo-textbox 
+              formControlName="email"
+              placeholder="Enter your email address">
+            </kendo-textbox>
+            <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="k-form-error">
+              <span *ngIf="contactForm.get('email')?.errors?.['required']">Email is required</span>
+              <span *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid email</span>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="k-label">Company</label>
+            <kendo-textbox 
+              formControlName="company"
+              placeholder="Enter your company name">
+            </kendo-textbox>
+          </div>
+
+          <div class="form-field">
+            <label class="k-label">Subject *</label>
+            <kendo-dropdownlist 
+              formControlName="subject"
+              [data]="subjects"
+              textField="text"
+              valueField="value"
+              [defaultItem]="defaultSubject">
+            </kendo-dropdownlist>
+            <div *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched" class="k-form-error">
+              Please select a subject
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="k-label">Message *</label>
+            <kendo-textarea 
+              formControlName="message"
+              placeholder="Enter your message..."
+              [rows]="6">
+            </kendo-textarea>
+            <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="k-form-error">
+              Message is required
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button kendoButton 
+              [themeColor]="'primary'" 
+              [size]="'large'"
+              type="submit"
+              [disabled]="contactForm.invalid || isSubmitting">
+              {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+            </button>
+            <button kendoButton 
+              [fillMode]="'outline'" 
+              [size]="'large'"
+              type="button"
+              (click)="resetForm()">
+              Reset
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

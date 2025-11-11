@@ -1,12 +1,13 @@
 <!-- Header with Kendo AppBar -->
 <kendo-appbar [themeColor]="'primary'">
   <kendo-appbar-section>
-    <h3 routerLink="/" class="logo-link">Progress Showcase</h3>
+    <h3 (click)="navigateTo('/')" class="logo-link">Progress Showcase</h3>
   </kendo-appbar-section>
   <kendo-appbar-spacer></kendo-appbar-spacer>
   <kendo-appbar-section>
-    <button kendoButton [fillMode]="'flat'" class="nav-btn" routerLink="/">Home</button>
-    <button kendoButton [fillMode]="'flat'" class="nav-btn" routerLink="/pricing">Pricing</button>
+    <button kendoButton [fillMode]="'flat'" class="nav-btn" (click)="navigateTo('/')">Home</button>
+    <button kendoButton [fillMode]="'flat'" class="nav-btn" (click)="navigateTo('/pricing')">Pricing</button>
+    <button kendoButton [fillMode]="'flat'" class="nav-btn" (click)="navigateTo('/contact')">Contact</button>
     <button kendoButton [themeColor]="'secondary'" class="cta-btn">Get Started</button>
   </kendo-appbar-section>
 </kendo-appbar>
@@ -62,7 +63,7 @@
           </div>
         </div>
       </kendo-splitter-pane>
-      <kendo-splitter-pane [size]="'50%'">
+      <kendo-splitter-pane>
         <div class="k-card demo-output-card">
           <div class="k-card-header">
             <h4 class="k-card-title">Generated Component</h4>
@@ -136,4 +137,5 @@
   </div>
 </div>
 
-<router-outlet />
+<!-- Router outlet for other pages -->
+<router-outlet></router-outlet>

@@ -31,8 +31,12 @@ export class App {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
-      this.isHomePage = event.url === '/' || event.url === '' || event.urlAfterRedirects === '/';
+      this.isHomePage = event.url === '/' || event.url === '';
     });
+  }
+  
+  navigateTo(route: string) {
+    this.router.navigate([route]);
   }
   
   features = [
