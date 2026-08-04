@@ -110,6 +110,9 @@ This project served as a comprehensive test for Progress Agentic UI Generator.
 ## Additional Resources
 
 - For more information on using the Angular CLI, including detailed command references, visit the Angular CLI Overview and Command Reference page.
-- For Progress Agentic UI Generator documentation, visit Progress Documentation.
+- For Progress Agentic UI Generator documentation, visit [Progress Agentic UI Generator](https://www.telerik.com/kendo-react-ui/components/ai-tools/agentic-ui-generator) Documentation.
 
 Built with Angular CLI and Progress Agentic UI Generator.
+
+By **Alphonse Kazadi**
+[alphonsekazadi01@gmail.com](alphonsekazadi01@gmail.com)
